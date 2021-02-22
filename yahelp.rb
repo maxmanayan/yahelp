@@ -65,14 +65,6 @@ res2 = {
 
 
 
-# OBJECTIVES
-# method w/ param restaurant, returns the menu of the param
-# method param restaurant, return avg review
-# create array of restaurant and do CRUD actions
-# method to return address
-# method to return days of operation
-# method takes a restaurant and updates it to your array
-
 @restaurants = [res1, res2]
 
 
@@ -334,7 +326,7 @@ create_res(res3 = {
   )
 
   create_res(res4 = {
-    id: 54, 
+    id: 101, 
     name: "Italian Garden", 
     location: {
       city: "SLC", 
@@ -377,7 +369,7 @@ create_res(res3 = {
 
 
 # update_res(2,res3 = {
-#   id: 54, 
+#   id: 97, 
 #   name: "Hot Dog!", 
 #   location: {
 #     city: "SLC", 

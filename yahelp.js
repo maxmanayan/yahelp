@@ -64,32 +64,10 @@ let res2 = {
 };
 
 
-// OBJECTIVES
-// method w/ param restaurant, returns the menu of the param
-// method param restaurant, return avg review
-// create array of restaurant and do CRUD actions
-// method to return address
-// method to return days of operation
-// method takes a restaurant and updates it to your array
-
 
 const restaurants = [res1, res2];
 
 
-// console.log(restaurants);
-
-// // // BASIC METHOD FORMAT
-// const return_restaurants = () => {
-//   return restaurants;
-// };
-
-// console.log(return_restaurants());
-
-// let res_name = restaurants.forEach = () => {
-//   console.log("Hello World")
-// }
-
-// console.log(res_name)
 
 ////GET ONE RESTAURANT'S MENU
 function getMenu (res) {
@@ -146,9 +124,9 @@ allAddresses();
 function allRatings () {
   console.log(`~Customer Ratings~`);
   restaurants.forEach((res)=>{
-  let rating_arr = res.reviews.map((review)=>{return review.rating;})
-  let avg_rating = (rating_arr)=>rating_arr.reduce((sum,rating) => sum + rating) / rating_arr.length; 
-  console.log(`${res.name} has an average rating of ${avg_rating(rating_arr)}/5`)})
+  let ratingArr = res.reviews.map((review)=>{return review.rating;})
+  let avgRating = (ratingArr)=>ratingArr.reduce((sum,rating) => sum + rating) / ratingArr.length; 
+  console.log(`${res.name} has an average rating of ${avgRating(ratingArr)}/5`)})
   console.log("")
 }
 
@@ -166,3 +144,57 @@ function getLikes () {restaurants.filter((res)=>{
 })};
 
 getLikes();
+
+
+
+
+
+//// ADD NEW ITEM TO RESTAURANT ARRAY
+function createRes (res = {}) {
+  restaurants.push(res)
+}
+
+let res3 = {
+  id: 54, 
+  name: "Kim's", 
+  location: {
+    city: "SLC", 
+    state: "UT",
+  }, 
+  delivery: true, 
+  days_open: "tues,wed,thur,fri,sat",
+  likes: 1100,
+  dishes: [
+    {name: "Gimbap", price: 3.75, ingredients: ["rice","seaweed"]},
+    {name: "Mandu", price: 5.25, ingredients: ["flour","pork"]},
+  ],
+  reviews: [
+    {user_id: 1, rating: 4},
+    {user_id: 2, rating: 5},
+  ],
+};
+
+let res4 = {
+  id: 101, 
+  name: "Italian Garden", 
+  location: {
+    city: "SLC", 
+    state: "UT",
+  }, 
+  delivery: false, 
+  days_open: "tues,wed,thur,fri,sat",
+  likes: 400,
+  dishes: [
+    {name: "Lasagna", price: 13.75, ingredients: ["cheese","noodles"]},
+    {name: "Chicken Parm", price: 17.25, ingredients: ["chicken","cheese"]},
+  ],
+  reviews: [
+    {user_id: 1, rating: 2},
+    {user_id: 2, rating: 5},
+  ],
+  };
+
+createRes(res3);
+createRes(res4);
+
+console.log(restaurants);
